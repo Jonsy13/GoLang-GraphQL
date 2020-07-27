@@ -2,6 +2,17 @@
 
 package model
 
+type Audio struct {
+	ID    string `json:"id"`
+	Title string `json:"title"`
+	URL   string `json:"url"`
+}
+
+type NewAudio struct {
+	Title string `json:"title"`
+	URL   string `json:"url"`
+}
+
 type NewVideo struct {
 	Title  string `json:"title"`
 	URL    string `json:"url"`

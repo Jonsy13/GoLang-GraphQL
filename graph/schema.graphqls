@@ -10,8 +10,20 @@ type User {
   name: String!
 }
 
+type Audio {
+  id: ID!
+  title: String!
+  url: String!
+}
+
 type Query{
   videos: [Video!]!
+  Audios: [Audio!]!
+}
+
+input NewAudio{
+  title: String!
+  url: String!
 }
 
 input NewVideo {
@@ -22,4 +34,5 @@ input NewVideo {
 
 type Mutation {
   createVideo(input:NewVideo!): Video!
+  createAudio(input:NewAudio!): Audio!
 }

@@ -22,11 +22,25 @@ func (r *mutationResolver) CreateVideo(ctx context.Context, input model.NewVideo
 
 	r.videos = append(r.videos, video)
 	return video, nil
+}
 
+func (r *mutationResolver) CreateAudio(ctx context.Context, input model.NewAudio) (*model.Audio, error) {
+	audio := &model.Audio{
+		ID:    fmt.Sprintf("T%d", rand.Int()),
+		Title: input.Title,
+		URL:   input.URL,
+	}
+
+	r.audios = append(r.audios, audio)
+	return audio, nil
 }
 
 func (r *queryResolver) Videos(ctx context.Context) ([]*model.Video, error) {
 	return r.videos, nil
+}
+
+func (r *queryResolver) Audios(ctx context.Context) ([]*model.Audio, error) {
+	return r.audios, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.

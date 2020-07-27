@@ -7,4 +7,5 @@ import "github.com/Jonsy13/GoLang-GraphQL/graph/model"
 //Resolver is used to resolve.
 type Resolver struct {
 	videos []*model.Video
+	audios []*model.Audio
 }
